@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author @haihv433
+ * @copyright Copyright (c) 2020 Goomento (https://store.goomento.com)
+ * @package Goomento_CatalogSortBy
+ * @link https://github.com/Goomento/CatalogSortBy
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Goomento_CatalogSortBy::maintext"
+             title="Catalog Sort By"
+             module="Goomento_CatalogSortBy"
+             sortOrder="4"
+             parent="Goomento_Base::menu"
+             resource="Goomento_CatalogSortBy::maintext"/>
+
+        <add id="Goomento_CatalogSortBy::config"
+             title="Configuration"
+             module="Goomento_CatalogSortBy"
+             sortOrder="1"
+             parent="Goomento_CatalogSortBy::maintext"
+             action="adminhtml/system_config/edit/section/goomento_catalog_sort_by"
+             resource="Goomento_CatalogSortBy::config"
+             />
+    </menu>
+</config>

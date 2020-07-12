@@ -1,0 +1,254 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author @haihv433
+ * @copyright Copyright (c) 2020 Goomento (https://store.goomento.com)
+ * @package Goomento_CatalogSortBy
+ * @link https://github.com/Goomento/CatalogSortBy
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <section id="goomento_catalog_sort_by" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+            <resource>Goomento_CatalogSortBy::config</resource>
+            <label>Catalog Sort By</label>
+            <tab>goomento</tab>
+            <group id="general" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>General</label>
+                <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Active</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="remove_sorter_button" translate="label comment" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Remove Default Sorter Button</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+                <field id="override_sorter_label" translate="label comment" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="1" >
+                    <label>Override Default Sorter Label</label>
+                    <depends>
+                        <field id="*/*/active">1</field>
+                    </depends>
+                </field>
+            </group>
+            <group id="options" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Options</label>
+                <depends>
+                    <field id="goomento_catalog_sort_by/general/active">1</field>
+                </depends>
+                <group id="option1" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 1</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option2" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 2</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option3" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 3</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option4" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 4</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option5" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 5</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option6" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 6</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option7" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 7</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option8" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 8</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option9" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 9</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+                <group id="option10" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Option 10</label>
+                    <field id="active" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Active</label>
+                        <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    </field>
+                    <field id="title" translate="label comment" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Title</label>
+                    </field>
+                    <field id="model" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Sort By</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\ConcreteList</source_model>
+                    </field>
+                    <field id="direction" translate="label comment" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1" >
+                        <label>Direction</label>
+                        <source_model>Goomento\CatalogSortBy\Model\Config\Source\Direction</source_model>
+                    </field>
+                    <field id="sort_order" translate="label" type="text" sortOrder="90" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Sort Order</label>
+                    </field>
+                </group>
+            </group>
+        </section>
+    </system>
+</config>

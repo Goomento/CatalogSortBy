@@ -1,0 +1,61 @@
+<?php
+/**
+ * @author @haihv433
+ * @copyright Copyright (c) 2020 Goomento (https://store.goomento.com)
+ * @package Goomento_CatalogSortBy
+ * @link https://github.com/Goomento/CatalogSortBy
+ */
+
+use Goomento\CatalogSortBy\Helper\Config;
+
+/**
+ * This file was cloned from Magento_Catalog::product/list/toolbar/sorter.phtml
+ * For any design change, please check this template instead of the origin
+ */
+?>
+<?php
+/**
+ * Product list toolbar
+ *
+ * @var $block \Magento\Catalog\Block\Product\ProductList\Toolbar
+ */
+$override_label = Config::staticConfigGet('override_sorter_label');
+
+?>
+<div class="toolbar-sorter sorter">
+    <label class="sorter-label" for="sorter"><?= $block->escapeHtml(
+    $override_label
+                ? trim($override_label)
+                : __('Sort By')
+) ?></label>
+    <select id="sorter" data-role="sorter" class="sorter-options">
+        <?php foreach ($block->getAvailableOrders() as $_key => $_order) :?>
+            <option value="<?= $block->escapeHtmlAttr($_key) ?>"
+                <?php if ($block->isOrderCurrent($_key)) :?>
+                    selected="selected"
+                <?php endif; ?>
+                >
+                <?= $block->escapeHtml(__($_order)) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+    <?php if (!Config::staticConfigGetBool('remove_sorter_button')) : ?>
+        <?php if ($block->getCurrentDirection() == 'desc') :?>
+            <a title="<?= $block->escapeHtmlAttr(__('Set Ascending Direction')) ?>"
+               href="#"
+               class="action sorter-action sort-desc"
+               data-role="direction-switcher"
+               data-value="asc">
+                <span><?= $block->escapeHtml(__('Set Ascending Direction')) ?></span>
+            </a>
+        <?php else :?>
+            <a title="<?= $block->escapeHtmlAttr(__('Set Descending Direction')) ?>"
+               href="#"
+               class="action sorter-action sort-asc"
+               data-role="direction-switcher"
+               data-value="desc">
+                <span><?= $block->escapeHtml(__('Set Descending Direction')) ?></span>
+            </a>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>

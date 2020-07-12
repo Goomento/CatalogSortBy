@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author @haihv433
+ * @copyright Copyright (c) 2020 Goomento (https://store.goomento.com)
+ * @package Goomento_CatalogSortBy
+ * @link https://github.com/Goomento/CatalogSortBy
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="catalogSortByLogger" type="Goomento\Base\Logger\Logger">
+        <arguments>
+            <argument name="name" xsi:type="string">catalog_sort_by</argument>
+        </arguments>
+    </virtualType>
+    <type name="Goomento\CatalogSortBy\Helper\Logger">
+        <arguments>
+            <argument name="logger" xsi:type="object">catalogSortByLogger</argument>
+        </arguments>
+    </type>
+    <type name="Goomento\CatalogSortBy\Model\ConcreteComposite">
+        <arguments>
+            <argument name="builders" xsi:type="array">
+                <item name="datetime" xsi:type="string">Goomento\CatalogSortBy\Model\Concretes\Datetime</item>
+                <item name="popularity" xsi:type="string">Goomento\CatalogSortBy\Model\Concretes\Popularity</item>
+                <item name="title" xsi:type="string">Goomento\CatalogSortBy\Model\Concretes\Title</item>
+                <item name="price" xsi:type="string">Goomento\CatalogSortBy\Model\Concretes\Price</item>
+                <item name="position" xsi:type="string">Goomento\CatalogSortBy\Model\Concretes\Position</item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Magento\Catalog\Model\Config">
+        <plugin name="catalog_sort_by_add_config" type="Goomento\CatalogSortBy\Plugin\Catalog\Model\Config" />
+    </type>
+    <type name="Magento\Catalog\Block\Product\ProductList\Toolbar">
+        <plugin name="catalog_sort_by_change_toolbar" type="Goomento\CatalogSortBy\Plugin\Catalog\Block\Toolbar" />
+    </type>
+</config>
